@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} FNG Entertainment {% endblock %}
+{% block banner %} <img class="mt-4 mb-4 p-4" src="{% static 'images/banner-stay-alive.jpg' %}" width="100%"> {% endblock %}
+{% block content %}
+
+<form enctype="multipart/form-data" method="post">
+
+  {% csrf_token %}
+  {% for camp in form %}
+
+  <div class="mb-3">
+    <label for="" class="form-label">{{ camp.label }}</label>
+
+    <input type="{{ camp.field.widget.input_type }}" class="form-control" name="{{ camp.name }}" id=""
+      aria-describedby="helpID" placeholder="{{ camp.label }}" value="{{ camp.value | default:'' }}" />
+  </div>
+  <div class="col-12 help-text"> {{camp.errors}}</div>
+
+  {% endfor %}
+  <input name="" id="" class="btn btn-success mt-3 mb-3" type="submit" value="Submit">
+
+</form>
+
+{% endblock %}

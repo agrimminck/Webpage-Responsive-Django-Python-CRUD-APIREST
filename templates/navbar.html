@@ -1,0 +1,23 @@
+<nav class="navbar mt-4 navbar-expand-lg navbar-dark bg-dark rounded">
+    <a class="navbar-brand mx-3" href="{% url 'index' %}">FNG Entertainment</a>
+    <button class="navbar-toggler mx-3" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-3">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'add_game' %}">Add Game</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'manage_games' %}">Manage Games</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'games_api' %}">Api</a>
+            </li>
+        </ul>
+    </div>
+</nav>
